@@ -1,16 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Znajdowanie wszystkich kategorii
-  const categories = document.querySelectorAll("#categories .item");
-  console.log(`Number of categories: ${categories.length}`);
+const categories = document.querySelectorAll(".item");
 
-  // Iteracja przez wszystkie kategorie
-  categories.forEach((category) => {
-    // Znajdowanie i wypisywanie nazwy kategorii
-    const headerText = category.querySelector("h2").textContent;
-    console.log(`Category: ${headerText}`);
+console.log("Number of categories: " + categories.length);
 
-    // Znajdowanie i wypisywanie liczby elementów w kategorii
-    const itemsCount = category.querySelectorAll("ul li").length;
-    console.log(`Elements: ${itemsCount}`);
-  });
-});
+for (let i = 0; i < categories.length; i++) {
+  const category = categories[i];
+
+  const categoryName = category.querySelector("h2").textContent;
+  const elements = category.querySelectorAll("li");
+  console.log("Category: " + categoryName + "\nElements: " + elements.length);
+}
